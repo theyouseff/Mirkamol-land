@@ -6,344 +6,539 @@
 <title>Adenotomiya LOR jarroh</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=Urbanist:wght@400;500;600;700&display=swap">
 <style>
 :root{
-  color-scheme: dark;
-  --bg:#04070C;
-  --bg-2:#070C14;
-  --surface:#0B111B;
-  --surface-2:#0F1724;
-  --line:rgba(150,200,245,.11);
-  --line-2:rgba(150,200,245,.22);
-  --text:#EAF3FB;
-  --muted:#8E9DB0;
-  --dim:#5E6C7E;
-  --sky:#5CC8FF;
-  --ice:#9ADFFF;
-  --deep:#1769FF;
-  --warn:#D99479;
-  --display:"Unbounded", "Onest", system-ui, sans-serif;
-  --body:"Onest", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --mono:"JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
-  --r-lg:28px;
-  --r-md:18px;
+  color-scheme: light;
+  --blue:#2C9BF0;
+  --blue-lt:#6CC3FA;
+  --blue-dk:#0E63B0;
+  --blue-ink:#0A4B86;
+  --sheet:#F5F6F8;
+  --card:#F1F2F4;
+  --card-hi:#FAFBFC;
+  --ink:#17181B;
+  --ink-2:#3A3C41;
+  --muted:#6B6E76;
+  --faint:#A9ACB3;
+  --ghost:#D9DBE0;
+  --hair:#E2E4E8;
+  --lip:#E2E4E8;
+  --display:"Inter Tight", "Helvetica Neue", Arial, sans-serif;
+  --text:"Urbanist", "Inter Tight", system-ui, -apple-system, sans-serif;
+  --sh-card:inset 0 1px 0 rgba(255,255,255,.95), 0 6px 0 -1px var(--lip), 0 22px 44px -22px rgba(18,24,34,.28);
+  --sh-chip:inset 0 1px 0 #fff, 0 3px 0 -1px var(--lip), 0 8px 16px -8px rgba(18,24,34,.25);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--bg)}
-body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.6 var(--body);overflow-x:clip;-webkit-font-smoothing:antialiased}
+html{background:var(--blue);scroll-behavior:smooth}
+body{margin:0;background:var(--blue);color:var(--ink);font:400 16px/1.55 var(--text);overflow-x:clip;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{max-width:100%}
-h1,h2,h3{font-family:var(--display);font-weight:500;letter-spacing:-.025em;line-height:1.08;margin:0;text-wrap:balance}
+h1,h2,h3,h4{margin:0;font-family:var(--display);font-weight:500;letter-spacing:-.045em;line-height:1;text-wrap:balance}
 p{margin:0}
-:focus-visible{outline:2px solid var(--sky);outline-offset:3px;border-radius:8px}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer;padding:0}
+:focus-visible{outline:2px solid var(--blue-dk);outline-offset:3px;border-radius:10px}
+.ph{border-bottom:1.5px dashed currentColor;opacity:.92}
 
-.wrap{max-width:1180px;margin-inline:auto;padding-inline:clamp(16px,4vw,32px)}
-.sec{padding-block:clamp(72px,10vw,128px);position:relative}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ice)}
-.eyebrow::before{content:"";width:18px;height:1px;background:var(--sky)}
-.sec-head{display:grid;gap:18px;max-width:760px;margin-bottom:clamp(40px,6vw,64px)}
-.sec-head h2{font-size:clamp(28px,4.4vw,48px)}
-.sec-head p{color:var(--muted);font-size:clamp(16px,1.6vw,18px);max-width:62ch}
-.grad{background:linear-gradient(100deg,var(--ice),var(--sky) 55%,#7FA8FF);-webkit-background-clip:text;background-clip:text;color:transparent;font-style:normal}
-.ph{color:var(--ice);border-bottom:1px dashed rgba(154,223,255,.55)}
+/* FRAME */
+.frame{padding-inline:clamp(6px,3.2vw,64px);padding-block:clamp(6px,1.4vw,22px) 0}
+.sheet{background:var(--sheet)}
+.wrap{max-width:1240px;margin-inline:auto;padding-inline:clamp(16px,5vw,80px)}
+.sec{padding-block:clamp(72px,9vw,130px)}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font:500 15px/1 var(--body);transition:transform .2s ease, box-shadow .2s ease, background .2s ease;white-space:nowrap}
-.btn-primary{background:var(--text);color:#05080D;box-shadow:0 0 0 1px rgba(255,255,255,.2),0 10px 40px -8px rgba(92,200,255,.55)}
-.btn-primary:hover{transform:translateY(-1px);box-shadow:0 0 0 1px rgba(255,255,255,.3),0 14px 50px -6px rgba(92,200,255,.75)}
-.btn-ghost{border:1px solid var(--line-2);background:rgba(12,18,28,.55);backdrop-filter:blur(10px)}
-.btn-ghost:hover{border-color:rgba(154,223,255,.45)}
-.btn-ghost s{color:var(--dim)}
-.btn .arr{display:inline-block;transition:transform .2s ease}
-.btn:hover .arr{transform:translateX(3px)}
+/* SHARED */
+.tag{display:inline-flex;align-items:center;gap:9px;padding:9px 16px;border-radius:10px;background:#fff;box-shadow:var(--sh-chip);font:500 15px/1 var(--text);color:var(--blue-dk)}
+.tag::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.h2{font-size:clamp(38px,6.2vw,84px);letter-spacing:-.06em;line-height:.95;background:linear-gradient(100deg,#6C6F77 0%,#1C1D20 42%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.06em}
+.h2 .fade{background:linear-gradient(180deg,#5C5F66 10%,rgba(92,95,102,.25) 95%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sec-head{display:grid;gap:26px;margin-bottom:clamp(44px,6vw,80px)}
+.sec-head.c{justify-items:center;text-align:center}
+.sec-head .sub{color:var(--muted);font-size:clamp(16px,1.5vw,18px);max-width:58ch}
+.card{background:var(--card);border-radius:32px;box-shadow:var(--sh-card)}
 
-/* NAV */
-.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(4,7,12,.66);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav-in{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
-.logo{display:flex;align-items:center;gap:10px;font:500 15px/1 var(--display);letter-spacing:-.01em}
-.logo-mark{width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 50% 40%,var(--ice),var(--sky) 40%,var(--deep) 75%,transparent 76%);box-shadow:0 0 18px rgba(92,200,255,.6)}
-.nav-links{display:flex;gap:28px;font-size:14px;color:var(--muted)}
-.nav-links a:hover{color:var(--text)}
-.nav .btn{min-height:42px;padding:0 18px;font-size:14px}
-@media (max-width:900px){.nav-links{display:none}}
-@media (max-width:420px){.nav .btn{padding:0 14px;font-size:13px}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:62px;padding:0 34px;border-radius:999px;font:500 17px/1 var(--display);letter-spacing:-.02em;white-space:nowrap;transition:transform .18s ease,box-shadow .18s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(1px)}
+.btn-dark{color:#fff;background:linear-gradient(180deg,#3B3C40,#1C1D20);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 5px 0 #0D0E10,0 18px 30px -12px rgba(0,0,0,.6)}
+.btn-light{color:var(--ink);background:linear-gradient(180deg,#fff,#EEF0F2);box-shadow:inset 0 1px 0 #fff,0 5px 0 #CDD1D7,0 18px 30px -14px rgba(0,0,0,.35)}
+.icon-tile{width:92px;height:92px;border-radius:20px;display:grid;place-items:center;color:#fff;background:linear-gradient(160deg,var(--blue-lt),var(--blue) 45%,#1A7FD6);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 5px 0 #146BB8,0 26px 50px -8px rgba(44,155,240,.55)}
+.icon-tile svg{width:38px;height:38px}
+.icon-dark{width:78px;height:78px;border-radius:18px;display:grid;place-items:center;color:#fff;background:linear-gradient(180deg,#3B3C40,#1C1D20);box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 5px 0 #0D0E10,0 20px 30px -14px rgba(0,0,0,.55)}
+.icon-dark svg{width:30px;height:30px}
 
 /* HERO */
-.hero{position:relative;overflow:hidden;padding-block:clamp(64px,10vw,120px) clamp(120px,16vw,200px);isolation:isolate}
-.hero-bg{position:absolute;inset:0;z-index:-1;pointer-events:none}
-.hero-bg .grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 70% 60% at 50% 35%,#000 20%,transparent 75%);-webkit-mask-image:radial-gradient(ellipse 70% 60% at 50% 35%,#000 20%,transparent 75%);opacity:.55}
-.hero-bg .beam{position:absolute;left:50%;bottom:12%;width:min(1300px,160vw);height:420px;transform:translateX(-50%);background:radial-gradient(ellipse 50% 45% at 50% 100%,rgba(92,200,255,.55),rgba(23,105,255,.18) 45%,transparent 72%);filter:blur(10px);animation:breathe 7s ease-in-out infinite}
-.hero-bg .orb{position:absolute;left:50%;top:calc(100% - clamp(150px,18vw,230px));width:min(1500px,190vw);aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 50% 0%,#0B1A2A 0%,var(--bg) 22%);box-shadow:0 0 0 1px rgba(154,223,255,.55),0 -2px 24px 2px rgba(154,223,255,.55),0 -40px 140px 20px rgba(92,200,255,.35),inset 0 36px 90px -30px rgba(92,200,255,.75)}
-.hero-bg .ring{position:absolute;left:50%;top:calc(100% - clamp(150px,18vw,230px));width:min(1500px,190vw);aspect-ratio:1;border-radius:50%;transform:translate(-50%,-38px) scale(1.06);border:1px solid rgba(154,223,255,.12)}
-.hero-bg .ring.r2{transform:translate(-50%,-80px) scale(1.12);border-color:rgba(154,223,255,.06)}
-@keyframes breathe{0%,100%{opacity:.8}50%{opacity:1}}
+.hero{position:relative;overflow:hidden;isolation:isolate;border-radius:clamp(22px,3vw,44px);border:clamp(4px,.5vw,8px) solid #fff;background:radial-gradient(70% 80% at 62% 30%,#66BFFA 0%,var(--blue) 50%,#1F86DB 100%);color:#fff;box-shadow:0 30px 60px -30px rgba(6,40,80,.5)}
+.hero-giant{position:absolute;z-index:-2;left:0;right:0;bottom:-.2em;text-align:center;font:500 clamp(140px,30vw,520px)/.8 var(--display);letter-spacing:-.07em;color:rgba(255,255,255,.13);white-space:nowrap;pointer-events:none;user-select:none}
+.hero-fig{position:absolute;z-index:-1;left:50%;bottom:0;height:84%;aspect-ratio:600/800;transform:translateX(-38%);max-width:none}
+.hero-fig .note{position:absolute;left:50%;top:6%;transform:translateX(-50%);font:600 11px/1 var(--text);letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);white-space:nowrap}
+.hero-in{position:relative;padding-inline:clamp(18px,3.6vw,56px);padding-block:clamp(20px,2.4vw,36px) clamp(22px,2.4vw,36px);display:grid;gap:clamp(40px,6vw,80px)}
+.hnav{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:clamp(20px,4vw,60px)}
+.brand{display:flex;align-items:center}
+.brand svg{width:56px;height:36px}
+.hnav-meta{font:400 17px/1.35 var(--display);letter-spacing:-.02em;color:rgba(255,255,255,.92)}
+.hnav-links{display:flex;gap:clamp(20px,3vw,60px);font:400 18px/1 var(--display);letter-spacing:-.02em;color:rgba(255,255,255,.92)}
+.hnav-links a:hover{color:#fff}
+.hnav .btn{height:54px;padding:0 26px;font-size:16px}
+.hero-body{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.7fr) minmax(0,.75fr);gap:24px;align-items:start}
+.hero-left{display:grid;gap:30px;justify-items:start;position:relative;z-index:2}
+.badge{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:10px;background:#fff;color:var(--blue-dk);font:500 17px/1 var(--display);letter-spacing:-.02em;box-shadow:0 4px 0 rgba(0,0,0,.08),0 10px 20px -10px rgba(0,0,0,.3)}
+.badge svg{width:22px;height:22px}
+.hero h1{font-size:clamp(46px,7.6vw,118px);letter-spacing:-.065em;line-height:.88;color:#fff;text-wrap:initial}
+.hero h1 .ln{display:block;white-space:nowrap}
+.float-pill{display:inline-block;position:relative;vertical-align:middle;width:1.9em;height:.62em;margin-left:.12em;border-radius:999px;background:linear-gradient(180deg,#1C7CD1,#0F63B2);box-shadow:inset 0 2px 6px rgba(0,0,0,.25),0 1px 0 rgba(255,255,255,.2);transform:translateY(-.08em)}
+.float-pill i{position:absolute;width:.46em;height:.46em;border-radius:.1em;background:#fff;display:grid;place-items:center;color:var(--blue-dk);box-shadow:0 6px 14px -4px rgba(0,0,0,.35)}
+.float-pill i svg{width:.26em;height:.26em}
+.float-pill i:nth-child(1){left:.18em;top:-.2em;transform:rotate(-14deg)}
+.float-pill i:nth-child(2){left:.78em;top:.3em;transform:rotate(10deg)}
+.float-pill i:nth-child(3){left:1.3em;top:-.12em;transform:rotate(-6deg)}
+.hero-lead{font:400 clamp(17px,1.6vw,22px)/1.45 var(--display);letter-spacing:-.02em;color:rgba(255,255,255,.9);max-width:30ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:16px}
+.hero-right{grid-column:3;display:grid;gap:clamp(28px,4vw,56px);padding-top:clamp(20px,5vw,90px);position:relative;z-index:2}
+.hero-quote{font:400 clamp(16px,1.3vw,19px)/1.35 var(--display);letter-spacing:-.02em;color:#fff}
+.hero-quote>span{display:block;margin-top:12px;color:rgba(255,255,255,.72);font-size:15px}
+.stat-nav{display:flex;align-items:center;gap:18px}
+.stat-bar{flex:1;display:flex;gap:6px}
+.stat-bar b{flex:1;height:2px;background:rgba(255,255,255,.3);border-radius:2px;transition:background .3s ease}
+.stat-bar b.on{background:#0E4F8E}
+.stat-arrows{display:flex;gap:14px}
+.stat-arrows button{width:28px;height:28px;display:grid;place-items:center;color:#fff;border-radius:50%}
+.stat-arrows svg{width:16px;height:16px}
+.stat-label{font:600 15px/1 var(--display);letter-spacing:.01em;text-transform:uppercase}
+.stat-num{font:500 clamp(84px,10vw,168px)/.85 var(--display);letter-spacing:-.07em;margin-top:18px;white-space:nowrap}
+.stat-num small{font-size:1em;color:var(--blue-ink)}
+.stat-cap{margin-top:14px;font:400 15px/1.3 var(--display);color:rgba(255,255,255,.8)}
+.scroll-hint{justify-self:center;display:flex;align-items:center;gap:14px;font:400 17px/1 var(--display);letter-spacing:-.02em}
+.scroll-hint span{width:36px;height:36px;border-radius:50%;background:#fff;color:var(--blue);display:grid;place-items:center}
+.scroll-hint svg{width:14px;height:14px}
+.trust{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:18px 30px;font:700 clamp(18px,1.8vw,26px)/1 var(--text);letter-spacing:-.02em;color:rgba(255,255,255,.88)}
+.trust li{display:flex;align-items:center;gap:10px}
+.trust svg{width:1.1em;height:1.1em;opacity:.9}
 
-.hero-in{display:grid;justify-items:center;text-align:center;gap:26px}
-.chip{display:inline-flex;align-items:center;gap:10px;padding:8px 14px 8px 10px;border-radius:999px;border:1px solid var(--line-2);background:rgba(11,17,27,.7);font-size:13px;color:var(--muted)}
-.chip b{font:500 11px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#05080D;background:var(--sky);padding:5px 8px;border-radius:999px}
-.hero h1{font-size:clamp(32px,6.2vw,72px);max-width:15ch}
-.hero .lead{font-size:clamp(16px,1.8vw,19px);color:var(--muted);max-width:56ch}
-.cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
-.hero-facts{list-style:none;margin:28px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));width:min(760px,100%);border:1px solid var(--line);border-radius:var(--r-md);background:rgba(7,12,20,.6);backdrop-filter:blur(8px)}
-.hero-facts li{padding:18px 16px;display:grid;gap:4px}
-.hero-facts li+li{border-left:1px solid var(--line)}
-.hero-facts strong{font:500 clamp(18px,2.4vw,24px)/1.1 var(--display);letter-spacing:-.02em}
-.hero-facts span{font-size:13px;color:var(--muted);line-height:1.35}
-@media (max-width:560px){.hero-facts{grid-template-columns:1fr}.hero-facts li+li{border-left:0;border-top:1px solid var(--line)}.cta-row .btn{width:100%}}
+@media (max-width:1080px){
+  .hnav-links{display:none}
+  .hnav{grid-template-columns:auto 1fr auto}
+  .hero-body{grid-template-columns:minmax(0,1fr) minmax(0,.8fr)}
+  .hero-right{grid-column:2}
+  .hero-fig{transform:translateX(-40%);opacity:.9}
+}
+@media (max-width:720px){
+  .hnav-meta{display:none}
+  .hnav{grid-template-columns:auto auto;justify-content:space-between}
+  .hnav .btn{height:46px;padding:0 18px;font-size:15px}
+  .hero-body{grid-template-columns:1fr}
+  .hero-right{grid-column:1;padding-top:8px}
+  .hero-fig{display:none}
+  .hero-cta .btn{flex:1 1 220px}
+  .trust{justify-content:flex-start;font-size:17px}
+  .scroll-hint{display:none}
+}
 
-/* QUALIFY */
-.q-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
-.q-item{display:grid;gap:14px;align-content:start;padding:22px;border-radius:var(--r-md);border:1px solid var(--line);background:linear-gradient(180deg,var(--surface),var(--bg-2))}
-.q-item svg{width:22px;height:22px;color:var(--sky)}
-.q-item h3{font:500 17px/1.3 var(--body);letter-spacing:0}
-.q-item p{font-size:14px;color:var(--muted);line-height:1.5}
-.q-note{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px;padding:22px 26px;border-radius:var(--r-md);border:1px solid rgba(92,200,255,.28);background:radial-gradient(120% 140% at 0% 0%,rgba(92,200,255,.12),transparent 55%),var(--surface)}
-.q-note p{font-size:17px;max-width:60ch}
-.q-note p b{color:var(--ice);font-weight:500}
-@media (max-width:980px){.q-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:520px){.q-grid{grid-template-columns:1fr}}
+/* QUALIFY HUB */
+.hub{display:grid;grid-template-columns:minmax(0,1fr) 110px minmax(0,250px) 110px minmax(0,1fr);align-items:center}
+.hub-col{display:grid;grid-auto-rows:1fr;gap:24px}
+.hub-card{padding:30px 34px;display:grid;gap:14px;align-content:start}
+.hub-card h3{font:600 clamp(20px,1.8vw,25px)/1.15 var(--text);letter-spacing:-.02em;color:var(--ink)}
+.hub-card p{color:var(--muted);font-size:16px;line-height:1.55}
+.hub-card .icon-dark{margin-bottom:10px}
+.conn{position:relative;align-self:stretch}
+.conn::before{content:"";position:absolute;left:0;width:50%;top:calc((100% - 48px)/6);bottom:calc((100% - 48px)/6);border:1px solid #D2D5DA;border-left:0;border-radius:0 26px 26px 0}
+.conn::after{content:"";position:absolute;left:50%;right:0;top:50%;border-top:1px solid #D2D5DA}
+.conn i{position:absolute;left:0;width:50%;top:50%;border-top:1px solid #D2D5DA}
+.conn b{position:absolute;left:50%;top:50%;width:7px;height:7px;margin:-3px 0 0 -3px;border-radius:50%;background:#C5C9CF}
+.conn.r{transform:scaleX(-1)}
+.hub-core{aspect-ratio:1/.78;max-width:100%;border-radius:36px;display:grid;place-items:center;align-content:center;gap:14px;color:#fff;text-align:center;background:linear-gradient(160deg,var(--blue-lt),var(--blue) 45%,#1A7FD6);box-shadow:inset 0 1px 0 rgba(255,255,255,.45),0 6px 0 #146BB8,0 40px 80px -10px rgba(44,155,240,.6)}
+.hub-core svg{width:64px;height:64px}
+.hub-core strong{font:500 32px/1 var(--display);letter-spacing:-.04em}
+.hub-core span{font:500 14px/1.2 var(--text);opacity:.9;padding-inline:12px}
+.q-note{margin-top:clamp(40px,5vw,64px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:24px;padding:30px 34px}
+.q-note p{font:500 clamp(18px,1.7vw,22px)/1.4 var(--display);letter-spacing:-.02em;max-width:52ch;color:var(--ink-2)}
+.q-note b{color:var(--blue-dk);font-weight:600}
+@media (max-width:1000px){
+  .hub{grid-template-columns:1fr;gap:24px}
+  .conn{display:none}
+  .hub-core{order:-1;aspect-ratio:auto;padding:36px 20px;border-radius:28px}
+  .hub-col{grid-auto-rows:auto}
+}
+@media (min-width:601px) and (max-width:1000px){.hub-col{grid-template-columns:1fr 1fr}.hub-col .hub-card:last-child{grid-column:span 2}}
 
-/* DOCTOR */
-.doc{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(28px,5vw,64px);align-items:center}
-.doc-photo{position:relative;aspect-ratio:4/5;max-width:100%;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--line-2);background:radial-gradient(90% 60% at 50% 100%,rgba(92,200,255,.35),transparent 70%),linear-gradient(180deg,#0E1826,#070C14)}
-.doc-photo .sil{position:absolute;left:50%;bottom:0;width:62%;transform:translateX(-50%);color:#132236}
-.doc-photo .tag{position:absolute;left:16px;right:16px;bottom:16px;display:flex;justify-content:space-between;gap:12px;padding:14px 16px;border-radius:14px;background:rgba(4,7,12,.72);backdrop-filter:blur(10px);border:1px solid var(--line-2);font-size:13px}
-.doc-photo .tag span{color:var(--muted)}
-.doc-photo .hint{position:absolute;top:16px;left:16px;font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
-.doc-text{display:grid;gap:22px}
-.doc-text h2{font-size:clamp(28px,4.2vw,46px)}
-.doc-text .quote{font-size:clamp(17px,1.8vw,20px);line-height:1.55;color:var(--text);padding-left:20px;border-left:1px solid var(--sky);max-width:58ch}
-.creds{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden}
-.creds li{background:var(--bg-2);padding:18px 20px;display:grid;gap:6px}
-.creds strong{font:500 clamp(20px,2.4vw,26px)/1.1 var(--display);letter-spacing:-.02em}
-.creds span{font-size:13px;color:var(--muted);line-height:1.4}
-@media (max-width:860px){.doc{grid-template-columns:1fr}.doc-photo{max-width:440px;width:100%}}
+/* ABOUT DOCTOR */
+.about{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(0,1fr);gap:28px;margin-top:-.2em}
+.about-media{position:relative;overflow:hidden;isolation:isolate;min-height:clamp(420px,52vw,640px);border-radius:36px;display:grid;place-items:center;text-align:center;color:#fff;padding:40px 24px;background:radial-gradient(60% 50% at 50% 100%,rgba(44,155,240,.45),transparent 70%),linear-gradient(180deg,#1E2A38,#0C121B);box-shadow:0 6px 0 -1px #0A0E14,0 30px 60px -24px rgba(10,20,40,.55)}
+.about-media .fig{position:absolute;z-index:-1;bottom:0;left:50%;height:92%;aspect-ratio:600/800;max-width:none;transform:translateX(-50%);opacity:.55}
+.about-media .inner{display:grid;justify-items:center;gap:22px}
+.pill-line{display:inline-flex;align-items:center;gap:12px;padding:12px 22px;border-radius:999px;border:1.5px solid rgba(255,255,255,.8);font:400 17px/1 var(--display);letter-spacing:-.02em}
+.pill-line::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px rgba(44,155,240,.25)}
+.about-media h3{font-size:clamp(34px,4.6vw,64px);letter-spacing:-.055em;line-height:.98}
+.about-media h3 span{color:var(--blue-lt)}
+.about-side{display:grid;gap:28px}
+.about-stat{position:relative;overflow:hidden;padding:36px 36px 30px;display:grid;align-content:space-between;gap:30px;min-height:260px}
+.about-stat p{font:400 clamp(17px,1.5vw,20px)/1.45 var(--display);letter-spacing:-.02em;max-width:34ch;color:var(--ink)}
+.about-stat .row{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.stars{display:flex;gap:3px}
+.stars i{width:26px;height:26px;display:grid;place-items:center;background:#1C1D20;color:#fff;font-style:normal;font-size:15px;line-height:1}
+.big-ghost{font:500 clamp(84px,9vw,150px)/.8 var(--display);letter-spacing:-.07em;color:#E1E3E7}
+.about-quote{padding:28px;display:grid;grid-template-columns:minmax(0,150px) minmax(0,1fr);gap:28px;align-items:center}
+.portrait{aspect-ratio:3/4;max-width:100%;border-radius:22px;overflow:hidden;position:relative;background:linear-gradient(180deg,#DDE6EF,#C7D3DF);box-shadow:0 20px 30px -14px rgba(0,0,0,.35)}
+.portrait svg{position:absolute;left:50%;bottom:0;height:96%;aspect-ratio:600/800;max-width:none;transform:translateX(-50%)}
+.about-quote blockquote{margin:0;display:grid;gap:18px}
+.about-quote blockquote svg{width:30px;height:24px;color:#CDD1D7}
+.about-quote blockquote p{font:400 clamp(17px,1.4vw,20px)/1.45 var(--display);letter-spacing:-.02em}
+.about-quote footer{font:400 15px/1.2 var(--display);color:var(--muted);display:flex;flex-wrap:wrap;gap:10px}
+.about-quote footer b{color:var(--ink);font-weight:500;padding-right:10px;border-right:1px solid var(--hair)}
+.creds{margin-top:clamp(56px,7vw,96px);padding-top:clamp(32px,4vw,56px);border-top:1px solid var(--hair);display:grid;grid-template-columns:minmax(0,160px) repeat(4,minmax(0,1fr));gap:24px;align-items:center}
+.creds>span{font:400 17px/1.35 var(--display);color:var(--muted)}
+.creds div{display:grid;gap:4px}
+.creds strong{font:500 clamp(24px,2.4vw,34px)/1 var(--display);letter-spacing:-.05em;color:var(--ink-2)}
+.creds small{font-size:14px;color:var(--muted)}
+@media (max-width:980px){.about{grid-template-columns:1fr}.creds{grid-template-columns:repeat(2,minmax(0,1fr))}.creds>span{grid-column:span 2}}
+@media (max-width:520px){.about-quote{grid-template-columns:1fr}.portrait{width:150px}}
 
 /* VIDEO */
-.v-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
-.v-card{position:relative;aspect-ratio:9/16;max-width:100%;border-radius:22px;overflow:hidden;border:1px solid var(--line-2);display:flex;flex-direction:column;justify-content:space-between;padding:16px;background:linear-gradient(180deg,rgba(4,7,12,0) 45%,rgba(4,7,12,.92)),radial-gradient(80% 50% at 30% 20%,rgba(92,200,255,.28),transparent 70%),linear-gradient(160deg,#10203A,#070C14)}
-.v-card:nth-child(2){background:linear-gradient(180deg,rgba(4,7,12,0) 45%,rgba(4,7,12,.92)),radial-gradient(80% 50% at 70% 30%,rgba(23,105,255,.35),transparent 70%),linear-gradient(200deg,#0D1B33,#070C14)}
-.v-card:nth-child(3){background:linear-gradient(180deg,rgba(4,7,12,0) 45%,rgba(4,7,12,.92)),radial-gradient(80% 50% at 50% 25%,rgba(154,223,255,.22),transparent 70%),linear-gradient(170deg,#132436,#070C14)}
-.v-top{display:flex;justify-content:space-between;font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.v-play{align-self:center;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:rgba(234,243,251,.12);border:1px solid rgba(234,243,251,.3);backdrop-filter:blur(8px);transition:transform .2s ease,background .2s ease}
-.v-card:hover .v-play{transform:scale(1.07);background:rgba(92,200,255,.25)}
-.v-play svg{width:22px;height:22px;margin-left:3px;color:var(--text)}
+.v-track{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.v-card{position:relative;aspect-ratio:9/15;max-width:100%;border-radius:30px;overflow:hidden;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;padding:20px;color:#fff;background:radial-gradient(70% 45% at 50% 30%,rgba(108,195,250,.45),transparent 70%),linear-gradient(180deg,#1C2A3A,#0B1119);box-shadow:0 6px 0 -1px #0A0E14,0 26px 44px -22px rgba(10,20,40,.55)}
+.v-card:nth-child(2n){background:radial-gradient(70% 45% at 40% 40%,rgba(44,155,240,.5),transparent 70%),linear-gradient(180deg,#1A2636,#0A0F16)}
+.v-card .fig{position:absolute;z-index:-1;bottom:0;left:50%;height:78%;aspect-ratio:600/800;max-width:none;transform:translateX(-50%);opacity:.35}
+.v-top{display:flex;justify-content:space-between;align-items:center}
+.v-chip{padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.14);backdrop-filter:blur(8px);font:500 13px/1 var(--text)}
+.v-play{align-self:center;width:74px;height:74px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#fff,#EEF0F2);color:var(--ink);box-shadow:0 5px 0 #BFC4CB,0 20px 30px -10px rgba(0,0,0,.5);transition:transform .2s ease}
+.v-card:hover .v-play{transform:scale(1.06)}
+.v-play svg{width:24px;height:24px;margin-left:4px}
 .v-bottom{display:grid;gap:4px}
-.v-bottom strong{font-weight:500;font-size:15px}
-.v-bottom span{font-size:13px;color:var(--muted)}
-@media (max-width:900px){.v-scroll{overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(clamp(16px,4vw,32px) * -1);padding-inline:clamp(16px,4vw,32px);scrollbar-width:none}.v-row{grid-template-columns:repeat(4,minmax(210px,1fr));width:max-content}.v-card{width:220px;scroll-snap-align:start}}
+.v-bottom strong{font:500 18px/1.2 var(--display);letter-spacing:-.02em}
+.v-bottom span{font-size:14px;color:rgba(255,255,255,.7)}
+@media (max-width:980px){.v-scroll{overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:calc(clamp(16px,5vw,80px) * -1);padding-inline:clamp(16px,5vw,80px);padding-bottom:30px;scrollbar-width:none}.v-scroll::-webkit-scrollbar{display:none}.v-track{grid-template-columns:repeat(4,230px);width:max-content}.v-card{scroll-snap-align:start}}
 
 /* TEXT REVIEWS */
-.r-grid{columns:3 300px;column-gap:14px}
-.r-card{break-inside:avoid;margin-bottom:14px;padding:24px;border-radius:var(--r-md);border:1px solid var(--line);background:var(--surface);display:grid;gap:16px}
-.r-stars{color:var(--sky);letter-spacing:3px;font-size:14px}
-.r-card p{font-size:15px;line-height:1.6;color:#C9D5E2}
-.r-who{display:flex;align-items:center;gap:12px;padding-top:14px;border-top:1px solid var(--line)}
-.r-av{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;font:500 13px/1 var(--display);background:linear-gradient(135deg,#16324F,#0B111B);border:1px solid var(--line-2);color:var(--ice)}
+.r-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.r-card{padding:30px;display:grid;gap:22px;align-content:space-between}
+.r-card p{font:400 18px/1.5 var(--display);letter-spacing:-.015em;color:var(--ink-2)}
+.r-card .stars i{width:22px;height:22px;font-size:13px}
+.r-who{display:flex;align-items:center;gap:14px;padding-top:20px;border-top:1px solid var(--hair)}
+.r-av{width:44px;height:44px;border-radius:14px;display:grid;place-items:center;font:600 17px/1 var(--display);color:#fff;background:linear-gradient(160deg,var(--blue-lt),var(--blue));box-shadow:0 3px 0 #146BB8}
 .r-who div{display:grid;gap:2px}
-.r-who strong{font-weight:500;font-size:14px}
-.r-who span{font-size:12px;color:var(--dim)}
-.sample{display:inline-block;margin-left:auto;font:500 10px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--dim);border:1px dashed var(--line-2);padding:5px 7px;border-radius:6px}
+.r-who strong{font:500 16px/1.2 var(--display)}
+.r-who span{font-size:14px;color:var(--muted)}
+.sample{margin-left:auto;font:600 11px/1 var(--text);letter-spacing:.08em;text-transform:uppercase;color:var(--faint);padding:6px 8px;border:1px dashed var(--ghost);border-radius:8px}
+@media (max-width:980px){.r-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.r-grid{grid-template-columns:1fr}}
 
-/* METHOD */
-.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;counter-reset:step}
-.step{position:relative;padding:26px 22px 24px;border-radius:var(--r-md);border:1px solid var(--line);background:linear-gradient(180deg,var(--surface),var(--bg));display:grid;gap:12px;align-content:start;counter-increment:step}
-.step::before{content:counter(step,decimal-leading-zero);font:500 12px/1 var(--mono);letter-spacing:.1em;color:var(--sky)}
-.step h3{font-size:19px;line-height:1.2}
-.step p{font-size:14px;color:var(--muted);line-height:1.55}
-.step .when{font:500 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--dim);padding-top:12px;border-top:1px solid var(--line)}
-.step.core{border-color:rgba(92,200,255,.38);background:radial-gradient(120% 80% at 50% 0%,rgba(92,200,255,.14),transparent 60%),var(--surface)}
-@media (max-width:980px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:520px){.steps{grid-template-columns:1fr}}
+/* PROCESS */
+.proc{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.6fr);gap:40px;align-items:center}
+.proc-head{display:grid;gap:30px;justify-items:start;align-content:center}
+.proc-head .sub{color:var(--muted);font-size:17px;max-width:40ch}
+.arrows{display:flex;gap:14px;margin-top:20px}
+.arrows button{width:64px;height:64px;border-radius:50%;display:grid;place-items:center;transition:transform .18s ease}
+.arrows button:hover{transform:translateY(-2px)}
+.arrows svg{width:20px;height:20px}
+.arrows .prev{color:#fff;background:linear-gradient(180deg,#3B3C40,#1C1D20);box-shadow:inset 0 1px 0 rgba(255,255,255,.2),0 4px 0 #0D0E10,0 14px 24px -10px rgba(0,0,0,.6)}
+.arrows .next{color:var(--ink);background:linear-gradient(180deg,#fff,#EEF0F2);box-shadow:inset 0 1px 0 #fff,0 4px 0 #CDD1D7,0 14px 24px -12px rgba(0,0,0,.35)}
+.p-track{display:flex;gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;padding:20px 30px 50px 6px;margin:-20px 0 -50px;scrollbar-width:none}
+.p-track::-webkit-scrollbar{display:none}
+.p-card{flex:0 0 min(440px,82vw);scroll-snap-align:start;padding:40px 40px 34px;display:grid;gap:24px;align-content:start;min-height:560px;grid-template-rows:auto auto auto 1fr auto}
+.p-card .icon-tile{margin-bottom:60px}
+.p-card h3{font-size:clamp(28px,2.8vw,40px);letter-spacing:-.05em;color:var(--ink)}
+.p-card hr{border:0;border-top:1px solid var(--hair);margin:0}
+.p-card p{font:400 17px/1.55 var(--text);color:var(--muted)}
+.p-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:10px}
+.p-dur{padding:11px 18px;border-radius:999px;border:1.5px solid var(--ghost);font:500 15px/1 var(--display);text-transform:uppercase;letter-spacing:.01em;white-space:nowrap}
+.p-idx{font:500 clamp(56px,6vw,86px)/.8 var(--display);letter-spacing:-.06em;color:#8E9198;white-space:nowrap}
+.p-idx span{color:var(--ghost)}
+@media (max-width:980px){.proc{grid-template-columns:1fr}.p-card{min-height:500px}}
 
-/* PRICE */
-.price-wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:14px;align-items:stretch}
-.incl{padding:clamp(24px,3vw,36px);border-radius:var(--r-lg);border:1px solid var(--line);background:var(--surface);display:grid;gap:26px;align-content:start}
-.incl h3{font-size:20px}
-.incl-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 28px}
-.incl-group{display:grid;gap:12px;align-content:start}
-.incl-group h4{margin:0;font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ice)}
-.incl-group ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.incl-group li{display:grid;grid-template-columns:18px 1fr;gap:10px;font-size:15px;line-height:1.45;color:#C9D5E2}
-.incl-group li svg{width:16px;height:16px;margin-top:3px;color:var(--sky)}
-.p-card{position:relative;overflow:hidden;isolation:isolate;padding:clamp(26px,3vw,38px);border-radius:var(--r-lg);border:1px solid rgba(154,223,255,.4);background:var(--bg-2);display:grid;gap:18px;align-content:start}
-.p-card::before{content:"";position:absolute;z-index:-1;left:50%;top:-60%;width:160%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(92,200,255,.32),rgba(23,105,255,.1) 55%,transparent 75%)}
-.p-card .eyebrow{color:var(--ice)}
-.p-card h3{font-size:clamp(20px,2.2vw,24px)}
-.p-old{font:400 20px/1 var(--display);color:var(--dim);text-decoration:line-through;text-decoration-color:var(--warn);text-decoration-thickness:2px;font-variant-numeric:tabular-nums}
-.p-new{display:flex;align-items:baseline;flex-wrap:wrap;gap:10px;font-variant-numeric:tabular-nums}
-.p-new strong{font:500 clamp(40px,5vw,56px)/1 var(--display);letter-spacing:-.04em}
-.p-new span{font-size:16px;color:var(--muted)}
-.p-save{justify-self:start;font:500 12px/1 var(--mono);letter-spacing:.06em;color:#05080D;background:var(--ice);padding:7px 10px;border-radius:999px}
-.p-card .btn{width:100%}
-.p-card small{font-size:13px;color:var(--muted);line-height:1.5}
-@media (max-width:900px){.price-wrap{grid-template-columns:1fr}}
-@media (max-width:560px){.incl-grid{grid-template-columns:1fr}}
+/* INCLUDED + PRICE BENTO */
+.bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:28px}
+.b-card{padding:clamp(28px,3.4vw,52px);display:grid;gap:14px;align-content:end;min-height:500px;grid-template-rows:1fr auto auto}
+.b-card h3{font:600 clamp(24px,2.3vw,32px)/1.1 var(--text);letter-spacing:-.025em;color:var(--ink)}
+.b-card p{font:400 17px/1.6 var(--text);color:var(--muted);max-width:44ch}
+.b-7{grid-column:span 7}
+.b-5{grid-column:span 5}
+.bars{display:grid;gap:18px;align-content:start}
+.bar-row{display:flex;align-items:center;gap:12px}
+.bar{height:48px;border-radius:12px;background:var(--card);box-shadow:inset 0 1px 0 #fff,0 4px 0 -1px var(--lip),0 10px 18px -12px rgba(0,0,0,.25)}
+.chip{display:inline-flex;align-items:center;gap:10px;height:52px;padding:0 18px;border-radius:12px;background:#fff;font:500 18px/1 var(--text);white-space:nowrap;box-shadow:var(--sh-chip)}
+.chip svg{width:22px;height:22px;color:var(--ink-2)}
+.checks{position:relative;display:flex;justify-content:center;align-items:center;gap:clamp(12px,3vw,40px);align-self:center;padding-block:10px 30px}
+.checks::before{content:"";position:absolute;left:0;right:0;top:calc(50% - 20px);height:44px;border-radius:12px;background:var(--card);box-shadow:inset 0 1px 0 #fff,0 4px 0 -1px var(--lip)}
+.chk{position:relative;display:grid;justify-items:center;gap:14px}
+.chk i{width:clamp(88px,9vw,128px);aspect-ratio:1;border-radius:18px;display:grid;place-items:center;background:var(--card-hi);box-shadow:inset 0 1px 0 #fff,0 5px 0 -1px var(--lip),0 20px 30px -16px rgba(0,0,0,.3)}
+.chk:nth-child(2) i{background:#fff;transform:translateY(-6px);box-shadow:inset 0 1px 0 #fff,0 5px 0 -1px var(--lip),0 34px 44px -18px rgba(0,0,0,.35)}
+.chk svg{width:44%;height:44%;color:var(--ink)}
+.chk small{position:absolute;top:calc(100% + 10px);font:500 14px/1.2 var(--text);color:var(--muted);white-space:nowrap}
+.shield{align-self:center;justify-self:center;position:relative;width:min(270px,70%);aspect-ratio:1/1.08}
+.shield svg.sh{width:100%;height:100%;filter:drop-shadow(0 20px 22px rgba(0,0,0,.12))}
+.shield .lock{position:absolute;left:50%;top:26%;width:34%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;display:grid;place-items:center;background:linear-gradient(180deg,#fff,#EEF0F2);box-shadow:inset 0 1px 0 #fff,0 4px 0 #D7DBE0,0 20px 30px -12px rgba(0,0,0,.35)}
+.shield .lock svg{width:44%;height:44%;color:var(--ink)}
+.price{align-content:stretch;grid-template-rows:auto 1fr auto;gap:26px}
+.price-top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px}
+.price-top .tag{box-shadow:var(--sh-chip)}
+.old{font:500 clamp(24px,2.4vw,32px)/1 var(--display);letter-spacing:-.04em;color:var(--faint);text-decoration:line-through;text-decoration-color:var(--blue);text-decoration-thickness:3px;font-variant-numeric:tabular-nums}
+.new{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px;font-variant-numeric:tabular-nums;align-self:center}
+.new strong{font:500 clamp(64px,8.4vw,128px)/.85 var(--display);letter-spacing:-.07em;background:linear-gradient(100deg,#6C6F77,#1C1D20 40%);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.05em}
+.new span{font:500 clamp(22px,2.2vw,30px)/1 var(--display);letter-spacing:-.04em;color:var(--blue-dk)}
+.price-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px}
+.save{display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:999px;background:linear-gradient(160deg,var(--blue-lt),var(--blue));color:#fff;font:600 15px/1 var(--text);box-shadow:0 3px 0 #146BB8}
+.price small{font-size:14px;color:var(--muted);width:100%}
+@media (max-width:980px){.b-7,.b-5{grid-column:span 12}.b-card{min-height:420px}}
+@media (max-width:560px){.chip{height:44px;font-size:15px;padding:0 12px}.bar{height:40px}.bars .bar-row .bar{min-width:30px}}
 
 /* TWO PATHS */
-.paths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.path{padding:clamp(24px,3vw,36px);border-radius:var(--r-lg);border:1px solid var(--line);display:grid;gap:22px;align-content:start}
-.path-a{background:var(--bg-2)}
-.path-b{position:relative;overflow:hidden;isolation:isolate;border-color:rgba(154,223,255,.4);background:var(--surface)}
-.path-b::before{content:"";position:absolute;z-index:-1;inset:auto -20% -70% -20%;height:120%;background:radial-gradient(ellipse at 50% 100%,rgba(92,200,255,.28),transparent 65%)}
-.path-label{font:500 12px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase}
-.path-a .path-label{color:var(--warn)}
-.path-b .path-label{color:var(--sky)}
-.path h3{font-size:clamp(22px,2.6vw,28px)}
+.paths{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.path{padding:clamp(28px,3.4vw,48px);display:grid;gap:26px;align-content:start}
+.path-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.path-no{font:500 15px/1 var(--display);letter-spacing:.02em;text-transform:uppercase}
+.path h3{font-size:clamp(30px,3.4vw,48px);letter-spacing:-.055em;line-height:1}
 .path ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
-.path li{display:grid;grid-template-columns:22px 1fr;gap:12px;font-size:15px;line-height:1.5}
-.path li svg{width:18px;height:18px;margin-top:2px}
-.path-a li{color:var(--muted)}
-.path-a li svg{color:var(--warn)}
-.path-b li svg{color:var(--sky)}
-.path-a .res{color:var(--dim)}
-.res{font-size:14px;padding-top:18px;border-top:1px solid var(--line)}
-.path-b .res{color:var(--ice)}
-@media (max-width:820px){.paths{grid-template-columns:1fr}}
+.path li{display:grid;grid-template-columns:40px 1fr;gap:16px;align-items:center;font:400 17px/1.45 var(--text)}
+.path li i{width:40px;height:40px;border-radius:11px;display:grid;place-items:center}
+.path li svg{width:18px;height:18px}
+.path .res{font:500 18px/1.4 var(--display);letter-spacing:-.02em;padding-top:22px}
+.path-a{color:var(--muted)}
+.path-a h3{color:var(--ink-2)}
+.path-a li i{background:linear-gradient(180deg,#3B3C40,#1C1D20);color:#fff;box-shadow:0 3px 0 #0D0E10}
+.path-a .res{border-top:1px solid var(--hair);color:var(--ink-2)}
+.path-b{position:relative;overflow:hidden;isolation:isolate;color:#fff;background:radial-gradient(80% 70% at 70% 20%,#66BFFA,var(--blue) 55%,#1F86DB);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 6px 0 -1px #146BB8,0 40px 70px -24px rgba(44,155,240,.6)}
+.path-b::after{content:"2";position:absolute;z-index:-1;right:-.05em;bottom:-.22em;font:500 380px/1 var(--display);letter-spacing:-.07em;color:rgba(255,255,255,.12)}
+.path-b li i{background:#fff;color:var(--blue-dk);box-shadow:0 3px 0 rgba(10,75,134,.35)}
+.path-b .res{border-top:1px solid rgba(255,255,255,.3)}
+.path-b .path-no{color:#fff}
+@media (max-width:860px){.paths{grid-template-columns:1fr}}
 
 /* FAQ */
-.faq{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(28px,5vw,64px)}
-.faq .sec-head{margin-bottom:0;align-content:start}
-.faq-list{display:grid;border-top:1px solid var(--line)}
-.faq-list details{border-bottom:1px solid var(--line)}
-.faq-list summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font:500 17px/1.4 var(--body)}
+.faq-list{max-width:920px;margin-inline:auto;display:grid;gap:16px}
+.faq-list details{background:var(--card);border-radius:22px;box-shadow:var(--sh-card)}
+.faq-list summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:24px 28px;font:500 clamp(18px,1.7vw,22px)/1.3 var(--display);letter-spacing:-.03em;color:var(--ink)}
 .faq-list summary::-webkit-details-marker{display:none}
-.faq-list summary .pm{flex:none;width:30px;height:30px;border-radius:50%;border:1px solid var(--line-2);position:relative;transition:transform .25s ease,border-color .25s ease}
-.faq-list summary .pm::before,.faq-list summary .pm::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.5px;background:var(--ice);transform:translate(-50%,-50%)}
-.faq-list summary .pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:opacity .2s ease}
-.faq-list details[open] summary .pm{border-color:var(--sky);transform:rotate(180deg)}
-.faq-list details[open] summary .pm::after{opacity:0}
-.faq-list details p{padding:0 48px 24px 0;color:var(--muted);font-size:15px;line-height:1.65;max-width:64ch}
-@media (max-width:860px){.faq{grid-template-columns:1fr}.faq-list details p{padding-right:0}}
+.pm{flex:none;width:44px;height:44px;border-radius:50%;position:relative;background:linear-gradient(180deg,#fff,#EEF0F2);box-shadow:inset 0 1px 0 #fff,0 3px 0 #D2D6DB,0 10px 16px -8px rgba(0,0,0,.3);transition:transform .25s ease,background .25s ease}
+.pm::before,.pm::after{content:"";position:absolute;left:50%;top:50%;width:14px;height:2px;border-radius:2px;background:var(--ink);transform:translate(-50%,-50%)}
+.pm::after{transform:translate(-50%,-50%) rotate(90deg);transition:opacity .2s ease}
+.faq-list details[open] .pm{transform:rotate(180deg);background:linear-gradient(180deg,#3B3C40,#1C1D20);box-shadow:0 3px 0 #0D0E10}
+.faq-list details[open] .pm::before,.faq-list details[open] .pm::after{background:#fff}
+.faq-list details[open] .pm::after{opacity:0}
+.faq-list details p{padding:0 28px 26px;font:400 17px/1.65 var(--text);color:var(--muted);max-width:70ch}
 
 /* CTA */
-.cta{position:relative;overflow:hidden;isolation:isolate;border-radius:36px;border:1px solid var(--line-2);padding:clamp(48px,8vw,96px) clamp(20px,5vw,64px) clamp(56px,9vw,110px);text-align:center;display:grid;justify-items:center;gap:22px;background:var(--bg-2)}
-.cta::before{content:"";position:absolute;z-index:-1;left:50%;top:78%;width:max(900px,130%);aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 50% 0%,#0B1A2A,var(--bg-2) 25%);box-shadow:0 0 0 1px rgba(154,223,255,.5),0 -30px 110px 10px rgba(92,200,255,.35),inset 0 30px 70px -26px rgba(92,200,255,.75)}
-.cta h2{font-size:clamp(28px,5vw,56px);max-width:16ch}
-.cta p{color:var(--muted);font-size:clamp(16px,1.7vw,18px);max-width:52ch}
-.cta .p-inline{font-variant-numeric:tabular-nums;color:var(--text)}
-.cta .p-inline s{color:var(--dim);text-decoration-color:var(--warn)}
-.contact{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;font-size:14px;color:var(--muted)}
-.contact b{color:var(--text);font-weight:500;user-select:all;font-variant-numeric:tabular-nums}
-@media (max-width:560px){.cta .cta-row .btn{width:100%}}
+.cta{position:relative;overflow:hidden;isolation:isolate;border-radius:40px;color:#fff;text-align:center;padding:clamp(56px,8vw,110px) clamp(20px,5vw,80px) clamp(120px,14vw,200px);display:grid;justify-items:center;gap:28px;background:radial-gradient(70% 80% at 50% 20%,#66BFFA,var(--blue) 55%,#1F86DB);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 8px 0 -1px #146BB8,0 50px 90px -30px rgba(44,155,240,.65)}
+.cta .giant{position:absolute;z-index:-1;left:0;right:0;bottom:-.24em;font:500 clamp(120px,24vw,380px)/.8 var(--display);letter-spacing:-.07em;color:rgba(255,255,255,.13);white-space:nowrap;pointer-events:none}
+.cta .badge{box-shadow:0 4px 0 rgba(0,0,0,.08)}
+.cta h2{font-size:clamp(40px,6.6vw,96px);letter-spacing:-.065em;line-height:.9;max-width:13ch}
+.cta p{font:400 clamp(17px,1.6vw,21px)/1.45 var(--display);letter-spacing:-.02em;color:rgba(255,255,255,.9);max-width:46ch}
+.cta p s{opacity:.65}
+.cta p b{font-weight:600}
+.cta-row{display:flex;flex-wrap:wrap;justify-content:center;gap:16px}
+.contact{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 28px;font:400 16px/1.3 var(--display);color:rgba(255,255,255,.85)}
+.contact b{color:#fff;font-weight:500;user-select:all}
+@media (max-width:560px){.cta-row .btn{width:100%}}
 
-footer{padding-block:36px 48px;color:var(--dim);font-size:13px}
-.foot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;border-top:1px solid var(--line);padding-top:24px}
+.foot{padding-block:40px 48px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:14px;font:400 14px/1.4 var(--display);color:var(--muted)}
 
-@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}html,.p-track{scroll-behavior:auto}}
 </style>
 </head>
 <body>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.2 4.2L19 7"/></symbol>
-  <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M7 7l10 10M17 7L7 17"/></symbol>
+  <defs>
+    <linearGradient id="gBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E2236"/><stop offset="1" stop-color="#050B14"/></linearGradient>
+    <linearGradient id="gRim" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9AD8FF" stop-opacity=".9"/><stop offset=".35" stop-color="#9AD8FF" stop-opacity="0"/></linearGradient>
+    <radialGradient id="gMirror" cx=".4" cy=".35" r=".7"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#CFE7F8"/><stop offset="1" stop-color="#6E8DA8"/></radialGradient>
+  </defs>
+  <symbol id="doctor" viewBox="0 0 600 800">
+    <path d="M40 800C52 628 160 548 300 538C440 548 548 628 560 800Z" fill="url(#gBody)"/>
+    <path d="M40 800C52 628 160 548 300 538" fill="none" stroke="url(#gRim)" stroke-width="3"/>
+    <path d="M246 452h108l14 104H232Z" fill="#0A1829"/>
+    <path d="M232 556l68 92 68-92" fill="none" stroke="#1D3957" stroke-width="10" stroke-linejoin="round"/>
+    <ellipse cx="300" cy="348" rx="116" ry="142" fill="#0C1C2F"/>
+    <path d="M186 330c-4-104 52-156 114-156s118 52 114 156c-36-22-78-32-114-32s-78 10-114 32Z" fill="#132B45"/>
+    <path d="M190 290c30-14 70-22 110-22s80 8 110 22" fill="none" stroke="#1E3F62" stroke-width="12"/>
+    <circle cx="300" cy="262" r="62" fill="url(#gMirror)"/>
+    <circle cx="300" cy="262" r="62" fill="none" stroke="#DDEFFC" stroke-width="5"/>
+    <circle cx="300" cy="262" r="44" fill="none" stroke="#FFFFFF" stroke-opacity=".5" stroke-width="2"/>
+    <circle cx="300" cy="262" r="9" fill="#0C1C2F"/>
+  </symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.5l4.8 4.8L19.5 7"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M7 7l10 10M17 7L7 17"/></symbol>
   <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M7 4.8v14.4a1 1 0 0 0 1.5.86l12-7.2a1 1 0 0 0 0-1.72l-12-7.2A1 1 0 0 0 7 4.8z"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M15 5l-7 7 7 7"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M5 13l7 7 7-7"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path fill="currentColor" d="M13 2l1.6 5.4L20 9l-5.4 1.6L13 16l-1.6-5.4L6 9l5.4-1.6zM5.5 14l.9 2.6L9 17.5l-2.6.9L5.5 21l-.9-2.6L2 17.5l2.6-.9z"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></symbol>
+  <symbol id="i-mouth" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M3 12c3-4 15-4 18 0-3 5-15 5-18 0zM7 12h10"/></symbol>
+  <symbol id="i-therm" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M10 14.5V5a2 2 0 1 1 4 0v9.5a4 4 0 1 1-4 0zM12 9v7"/></symbol>
+  <symbol id="i-ear" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M7 9a5 5 0 1 1 10 0c0 3-3 4-3 7a3 3 0 0 1-5.5 1.6M10 9.5a2 2 0 1 1 3 1.7"/></symbol>
+  <symbol id="i-voice" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 10v4M8 7v10M12 4v16M16 8v8M20 11v2"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 3s6 6.5 6 11a6 6 0 0 1-12 0c0-4.5 6-11 6-11z"/></symbol>
+  <symbol id="i-nose" viewBox="0 0 64 64"><path fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" d="M30 8c-2 12-10 24-14 32-3 6 1 11 7 11 3 0 5-2 9-2s6 2 9 2c6 0 10-5 7-11"/><path fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" d="M24 44c2-2 4-2 6 0M34 44c2-2 4-2 6 0"/><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="2 5" d="M26 54c-4 4-10 5-14 4M38 54c4 4 10 5 14 4"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-clip" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 4.5h6M9 12.5l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-scope" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2-4 3 8 2-4h7"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M3 12c2-4 4-4 6 0s4 4 6 0 4-4 6 0"/></symbol>
+  <symbol id="i-lung" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 3v8M12 11c-1 1-3 1.5-4 1M12 11c1 1 3 1.5 4 1M8 7c-3 1-5 5-5 10 0 2 1 3 3 3s3-1 3-3V8M16 7c3 1 5 5 5 10 0 2-1 3-3 3s-3-1-3-3V8"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.5" width="14" height="10" rx="2.5" fill="currentColor"/><path d="M8 10.5V8a4 4 0 0 1 8 0v2.5" fill="none" stroke="currentColor" stroke-width="2.2"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 3v4M16 3v4M3.5 10h17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 7v12M3 15h18v4M21 15v-3a3 3 0 0 0-3-3h-7v6M7 12.5a1.5 1.5 0 1 0 0-.01"/></symbol>
+  <symbol id="i-quote" viewBox="0 0 30 24"><path fill="currentColor" d="M0 24V13.6C0 5.8 4.2 1.2 11 0l1.3 3.6C8.4 4.9 6.6 7.4 6.4 11H12v13zm17 0V13.6C17 5.8 21.2 1.2 28 0l1.3 3.6c-3.9 1.3-5.7 3.8-5.9 7.4H29v13z"/></symbol>
 </svg>
 
-<header class="nav">
-  <div class="wrap nav-in">
-    <a class="logo" href="#top"><span class="logo-mark" aria-hidden="true"></span><span>Dr. <span class="ph">[Familiya]</span></span></a>
-    <nav class="nav-links" aria-label="Bo‘limlar">
-      <a href="#kim-uchun">Kim uchun</a>
-      <a href="#shifokor">Shifokor</a>
-      <a href="#sharhlar">Sharhlar</a>
-      <a href="#metodika">Metodika</a>
-      <a href="#narx">Narx</a>
-      <a href="#savollar">Savollar</a>
-    </nav>
-    <a class="btn btn-primary" href="#yozilish">Yozilish</a>
+<div class="frame">
+
+<!-- 1. HERO + OFFER -->
+<header class="hero" id="top">
+  <div class="hero-giant" aria-hidden="true">Nafas</div>
+  <svg class="hero-fig" aria-hidden="true"><use href="#doctor"/></svg>
+  <div class="hero-in">
+    <div class="hnav">
+      <a class="brand" href="#top" aria-label="Bosh sahifa"><svg viewBox="0 0 56 36" aria-hidden="true"><circle cx="18" cy="18" r="17" fill="#fff"/><circle cx="38" cy="18" r="17" fill="#fff" fill-opacity=".55"/><path d="M28 4.2a17 17 0 0 1 0 27.6 17 17 0 0 1 0-27.6z" fill="var(--blue)"/></svg></a>
+      <div class="hnav-meta">Endoskopik adenotomiya<br>Maxsus narx · <span class="ph">[sana]</span>gacha</div>
+      <nav class="hnav-links" aria-label="Bo‘limlar">
+        <a href="#shifokor">Shifokor</a>
+        <a href="#metodika">Metodika</a>
+        <a href="#sharhlar">Sharhlar</a>
+        <a href="#narx">Narx</a>
+      </nav>
+      <a class="btn btn-dark" href="#yozilish">Yozilish</a>
+    </div>
+
+    <div class="hero-body">
+      <div class="hero-left">
+        <span class="badge"><svg><use href="#i-spark"/></svg>Endoskopik adenotomiya</span>
+        <h1>
+          <span class="ln">Bolangiz <span class="float-pill" aria-hidden="true"><i><svg><use href="#i-check"/></svg></i><i><svg><use href="#i-moon"/></svg></i><i><svg><use href="#i-wave"/></svg></i></span></span>
+          <span class="ln">burni bilan</span>
+          <span class="ln">nafas olsin</span>
+        </h1>
+        <p class="hero-lead">Adenoidni endoskop nazoratida — ko‘rib turib, bir martada va to‘liq olib tashlaymiz. Xurrak, og‘iz bilan nafas va tez-tez shamollashga nuqta.</p>
+        <div class="hero-cta">
+          <a class="btn btn-dark" href="#yozilish">Konsultatsiyaga yozilish</a>
+          <a class="btn btn-light" href="#narx">Narxni ko‘rish</a>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <p class="hero-quote">“Adenoidni ko‘rmasdan emas, endoskop ekranida ko‘rib turib olib tashlayman — qoldiq qolmaydi, qayta o‘sish xavfi past.”<span>— Dr. <span class="ph">[Familiya]</span>, LOR-jarroh</span></p>
+        <div>
+          <div class="stat-nav">
+            <div class="stat-bar" aria-hidden="true"><b class="on"></b><b></b><b></b><b></b></div>
+            <div class="stat-arrows">
+              <button type="button" id="stat-prev" aria-label="Oldingi ko‘rsatkich"><svg><use href="#i-left"/></svg></button>
+              <button type="button" id="stat-next" aria-label="Keyingi ko‘rsatkich"><svg><use href="#i-right"/></svg></button>
+            </div>
+          </div>
+          <div aria-live="polite">
+            <p class="stat-label" id="stat-label" style="margin-top:34px">Amaliyot davomiyligi</p>
+            <p class="stat-num" id="stat-num">30<small>daq</small></p>
+            <p class="stat-cap" id="stat-cap">Umumiy narkoz ostida, endoskop nazoratida</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a class="scroll-hint" href="#kim-uchun">Pastga suring <span><svg><use href="#i-down"/></svg></span></a>
+
+    <ul class="trust" aria-label="Amaliyot xususiyatlari">
+      <li><svg><use href="#i-scope"/></svg>HD Endoskop</li>
+      <li><svg><use href="#i-wave"/></svg>Koblatsiya</li>
+      <li><svg><use href="#i-check"/></svg>Kesiksiz, tikuvsiz</li>
+      <li><svg><use href="#i-bed"/></svg>1 kun statsionar</li>
+      <li><svg><use href="#i-cal"/></svg>Nazorat ko‘riklari</li>
+    </ul>
   </div>
 </header>
 
-<main id="top">
-
-<!-- 1. HERO + OFFER -->
-<section class="hero">
-  <div class="hero-bg" aria-hidden="true">
-    <div class="grid"></div>
-    <div class="beam"></div>
-    <div class="ring r2"></div>
-    <div class="ring"></div>
-    <div class="orb"></div>
-  </div>
-  <div class="wrap hero-in">
-    <span class="chip"><b>Aksiya</b> Endoskopik adenotomiya — <span class="ph">[oy]</span> oyi uchun maxsus narx</span>
-    <h1>Farzandingiz yana <em class="grad">burni bilan</em> erkin nafas olsin</h1>
-    <p class="lead">Adenoidlarni endoskop nazoratida — ko‘rib turib, bir martada va to‘liq olib tashlaymiz. Xurrak, og‘iz bilan nafas olish va tez-tez shamollashga nuqta qo‘yamiz.</p>
-    <div class="cta-row">
-      <a class="btn btn-primary" href="#yozilish">Konsultatsiyaga yozilish <span class="arr">→</span></a>
-      <a class="btn btn-ghost" href="#narx"><s>6 000 000</s> 4 999 000 so‘m</a>
-    </div>
-    <ul class="hero-facts">
-      <li><strong>HD endoskop</strong><span>har bir harakat ekranda nazorat qilinadi</span></li>
-      <li><strong>~30 daqiqa</strong><span>amaliyot davomiyligi</span></li>
-      <li><strong>7–10 kun</strong><span>odatiy hayotga to‘liq qaytish</span></li>
-    </ul>
-  </div>
-</section>
+<main class="sheet">
 
 <!-- 2. KIM UCHUN -->
 <section class="sec" id="kim-uchun">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Kim uchun</span>
-      <h2>Bu belgilar tanishmi? Ehtimol, sababi — <em class="grad">adenoid</em></h2>
-      <p>Kattalashgan adenoid burun-halqum yo‘lini to‘sib qo‘yadi. Bola burni bilan nafas ololmaydi va buni biz “shunchaki shamollash” deb o‘ylaymiz.</p>
+    <div class="sec-head c">
+      <span class="tag">Kim uchun</span>
+      <h2 class="h2">Bu belgilar tanishmi?</h2>
+      <p class="sub">Kattalashgan adenoid burun-halqum yo‘lini to‘sadi. Bola burni bilan nafas ololmaydi — biz esa buni “shunchaki shamollash” deb o‘ylaymiz.</p>
     </div>
-    <div class="q-grid">
-      <div class="q-item"><svg><use href="#i-check"/></svg><h3>Kechasi xurrak otadi</h3><p>Uyqusida og‘zi ochiq, ba’zan nafasi to‘xtab-to‘xtab qoladi.</p></div>
-      <div class="q-item"><svg><use href="#i-check"/></svg><h3>Doim og‘zi bilan nafas oladi</h3><p>Kunduzi ham og‘zi ochiq yuradi, burni “bitib” turadi.</p></div>
-      <div class="q-item"><svg><use href="#i-check"/></svg><h3>Tez-tez shamollaydi</h3><p>Bog‘chaga bir hafta boradi — ikki hafta uyda davolanadi.</p></div>
-      <div class="q-item"><svg><use href="#i-check"/></svg><h3>Quloq og‘rig‘i qaytalanadi</h3><p>Otit yiliga bir necha marta, eshitish pasaygandek tuyuladi.</p></div>
-      <div class="q-item"><svg><use href="#i-check"/></svg><h3>Ovozi dimog‘dan chiqadi</h3><p>Gapirganda burni bitgandek, ba’zi tovushlarni aniq aytolmaydi.</p></div>
-      <div class="q-item"><svg><use href="#i-check"/></svg><h3>Ertalab charchab uyg‘onadi</h3><p>Uyqusi to‘yimsiz, kunduzi injiq, diqqatini jamlay olmaydi.</p></div>
-      <div class="q-item"><svg><use href="#i-check"/></svg><h3>Tomchilar yordam bermayapti</h3><p>Oylar davomida spreylar, yuvishlar — natija vaqtincha.</p></div>
-      <div class="q-item"><svg><use href="#i-check"/></svg><h3>LOR “adenoid 2–3 daraja” degan</h3><p>Tashxis bor, lekin qaror qabul qilishga ikkilanyapsiz.</p></div>
+    <div class="hub">
+      <div class="hub-col">
+        <div class="card hub-card"><span class="icon-dark"><svg><use href="#i-moon"/></svg></span><h3>Kechasi xurrak otadi</h3><p>Uyqusida og‘zi ochiq, ba’zan nafasi to‘xtab-to‘xtab qoladi.</p></div>
+        <div class="card hub-card"><span class="icon-dark"><svg><use href="#i-mouth"/></svg></span><h3>Doim og‘zi bilan nafas oladi</h3><p>Kunduzi ham og‘zi ochiq yuradi, burni “bitib” turadi.</p></div>
+        <div class="card hub-card"><span class="icon-dark"><svg><use href="#i-therm"/></svg></span><h3>Tez-tez shamollaydi</h3><p>Bog‘chaga bir hafta boradi — ikki hafta uyda davolanadi.</p></div>
+      </div>
+      <div class="conn" aria-hidden="true"><i></i><b></b></div>
+      <div class="hub-core">
+        <svg><use href="#i-nose"/></svg>
+        <strong>Adenoid</strong>
+        <span>2–3 daraja kattalashuv belgilari</span>
+      </div>
+      <div class="conn r" aria-hidden="true"><i></i><b></b></div>
+      <div class="hub-col">
+        <div class="card hub-card"><span class="icon-dark"><svg><use href="#i-ear"/></svg></span><h3>Quloq og‘rig‘i qaytalanadi</h3><p>Otit yiliga bir necha marta, eshitish pasaygandek tuyuladi.</p></div>
+        <div class="card hub-card"><span class="icon-dark"><svg><use href="#i-voice"/></svg></span><h3>Ovozi dimog‘dan chiqadi</h3><p>Gapirganda burni bitgandek, ba’zi tovushlarni aniq aytolmaydi.</p></div>
+        <div class="card hub-card"><span class="icon-dark"><svg><use href="#i-drop"/></svg></span><h3>Tomchilar yordam bermayapti</h3><p>Oylar davomida spreylar va yuvishlar — natija faqat vaqtincha.</p></div>
+      </div>
     </div>
-    <div class="q-note">
+    <div class="card q-note">
       <p>Agar <b>2 yoki undan ortiq</b> belgi mos kelsa — endoskopik ko‘rikdan o‘tish vaqti keldi. Amaliyot <b>3 yoshdan boshlab</b> bolalar va kattalar uchun.</p>
-      <a class="btn btn-ghost" href="#yozilish">Ko‘rikka yozilish <span class="arr">→</span></a>
+      <a class="btn btn-dark" href="#yozilish">Ko‘rikka yozilish</a>
     </div>
   </div>
 </section>
 
 <!-- 3. SHIFOKOR -->
-<section class="sec" id="shifokor">
-  <div class="wrap doc">
-    <div class="doc-photo">
-      <span class="hint">Shifokor surati</span>
-      <svg class="sil" viewBox="0 0 200 220" aria-hidden="true"><circle cx="100" cy="70" r="42" fill="currentColor"/><path d="M10 220c6-62 44-96 90-96s84 34 90 96z" fill="currentColor"/></svg>
-      <div class="tag"><strong>Dr. <span class="ph">[Ism Familiya]</span></strong><span>LOR-jarroh</span></div>
+<section class="sec" id="shifokor" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="tag">Shifokor haqida</span>
+      <h2 class="h2">Bolalar LOR-jarrohi,<br><span class="fade">Dr. [Ism Familiya]</span></h2>
     </div>
-    <div class="doc-text">
-      <span class="eyebrow">Shifokor haqida</span>
-      <h2>Bolalar LOR-jarrohi, <span class="ph">[Ism Familiya]</span></h2>
-      <p class="quote">“Har bir ota-ona farzandining kechasi xotirjam, burni bilan nafas olib uxlashini xohlaydi. Mening vazifam — buni xavfsiz, og‘riqsiz va bir martada qilish.”</p>
-      <ul class="creds">
-        <li><strong><span class="ph">[XX]</span>+ yil</strong><span>LOR-jarrohlik tajribasi</span></li>
-        <li><strong><span class="ph">[X XXX]</span>+</strong><span>o‘tkazilgan adenotomiya amaliyotlari</span></li>
-        <li><strong><span class="ph">[Klinika]</span></strong><span>asosiy amaliyot joyi</span></li>
-        <li><strong><span class="ph">[Malaka]</span></strong><span>xorijiy malaka oshirish / sertifikatlar</span></li>
-      </ul>
+    <div class="about">
+      <div class="about-media">
+        <svg class="fig" aria-hidden="true"><use href="#doctor"/></svg>
+        <div class="inner">
+          <span class="pill-line">Qabul ochiq — joylar cheklangan</span>
+          <h3>Qabul manzili<br><span><span class="ph">[Klinika, shahar]</span></span></h3>
+          <a class="btn btn-dark" href="#yozilish">Konsultatsiyaga yozilish</a>
+        </div>
+      </div>
+      <div class="about-side">
+        <div class="card about-stat">
+          <p><span class="ph">[XX]</span>+ yillik tajriba va <span class="ph">[X XXX]</span>+ bajarilgan adenotomiya — har biri endoskop nazoratida.</p>
+          <div class="row">
+            <div class="stars" aria-label="5 yulduz"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div>
+            <span class="big-ghost" aria-hidden="true">XX+</span>
+          </div>
+        </div>
+        <div class="card about-quote">
+          <div class="portrait"><svg aria-hidden="true"><use href="#doctor"/></svg></div>
+          <blockquote>
+            <svg aria-hidden="true"><use href="#i-quote"/></svg>
+            <p>Yaxshi amaliyot — bu ota-ona sezmaydigan amaliyot. Bola uyg‘onadi va burni bilan nafas oladi.</p>
+            <footer><b>Dr. <span class="ph">[Familiya]</span></b><span>LOR-jarroh</span></footer>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+    <div class="creds">
+      <span>Malaka va tajriba</span>
+      <div><strong><span class="ph">[XX]</span>+ yil</strong><small>LOR-jarrohlik tajribasi</small></div>
+      <div><strong><span class="ph">[X XXX]</span>+</strong><small>adenotomiya amaliyotlari</small></div>
+      <div><strong><span class="ph">[Oliygoh]</span></strong><small>tibbiy ta’lim</small></div>
+      <div><strong><span class="ph">[Sertifikat]</span></strong><small>xorijiy malaka oshirish</small></div>
     </div>
   </div>
 </section>
 
 <!-- 4. VIDEO SHARHLAR -->
-<section class="sec" id="sharhlar">
+<section class="sec" id="sharhlar" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <span class="eyebrow">Video sharhlar</span>
-      <h2>Ota-onalar o‘z so‘zlari bilan</h2>
-      <p>Amaliyotdan oldin qanday edi va hozir qanday — ota-onalarning o‘zidan eshiting.</p>
+      <span class="tag">Video sharhlar</span>
+      <h2 class="h2">Ota-onalar<br><span class="fade">o‘z so‘zlari bilan</span></h2>
     </div>
     <div class="v-scroll">
-      <div class="v-row">
-        <a class="v-card" href="#"><div class="v-top"><span>Video sharh</span><span>0:48</span></div><span class="v-play"><svg><use href="#i-play"/></svg></span><div class="v-bottom"><strong><span class="ph">[Ota-ona ismi]</span></strong><span>Farzandi <span class="ph">[X]</span> yosh</span></div></a>
-        <a class="v-card" href="#"><div class="v-top"><span>Video sharh</span><span>1:12</span></div><span class="v-play"><svg><use href="#i-play"/></svg></span><div class="v-bottom"><strong><span class="ph">[Ota-ona ismi]</span></strong><span>Farzandi <span class="ph">[X]</span> yosh</span></div></a>
-        <a class="v-card" href="#"><div class="v-top"><span>Video sharh</span><span>0:56</span></div><span class="v-play"><svg><use href="#i-play"/></svg></span><div class="v-bottom"><strong><span class="ph">[Ota-ona ismi]</span></strong><span>Farzandi <span class="ph">[X]</span> yosh</span></div></a>
-        <a class="v-card" href="#"><div class="v-top"><span>Video sharh</span><span>1:30</span></div><span class="v-play"><svg><use href="#i-play"/></svg></span><div class="v-bottom"><strong><span class="ph">[Ota-ona ismi]</span></strong><span>Farzandi <span class="ph">[X]</span> yosh</span></div></a>
+      <div class="v-track">
+        <a class="v-card" href="#"><svg class="fig" aria-hidden="true"><use href="#doctor"/></svg><div class="v-top"><span class="v-chip">Video sharh</span><span class="v-chip">0:48</span></div><span class="v-play"><svg><use href="#i-play"/></svg></span><div class="v-bottom"><strong><span class="ph">[Ota-ona ismi]</span></strong><span>Farzandi <span class="ph">[X]</span> yosh</span></div></a>
+        <a class="v-card" href="#"><svg class="fig" aria-hidden="true"><use href="#doctor"/></svg><div class="v-top"><span class="v-chip">Video sharh</span><span class="v-chip">1:12</span></div><span class="v-play"><svg><use href="#i-play"/></svg></span><div class="v-bottom"><strong><span class="ph">[Ota-ona ismi]</span></strong><span>Farzandi <span class="ph">[X]</span> yosh</span></div></a>
+        <a class="v-card" href="#"><svg class="fig" aria-hidden="true"><use href="#doctor"/></svg><div class="v-top"><span class="v-chip">Video sharh</span><span class="v-chip">0:56</span></div><span class="v-play"><svg><use href="#i-play"/></svg></span><div class="v-bottom"><strong><span class="ph">[Ota-ona ismi]</span></strong><span>Farzandi <span class="ph">[X]</span> yosh</span></div></a>
+        <a class="v-card" href="#"><svg class="fig" aria-hidden="true"><use href="#doctor"/></svg><div class="v-top"><span class="v-chip">Video sharh</span><span class="v-chip">1:30</span></div><span class="v-play"><svg><use href="#i-play"/></svg></span><div class="v-bottom"><strong><span class="ph">[Ota-ona ismi]</span></strong><span>Farzandi <span class="ph">[X]</span> yosh</span></div></a>
       </div>
     </div>
   </div>
@@ -352,124 +547,120 @@ footer{padding-block:36px 48px;color:var(--dim);font-size:13px}
 <!-- 5. MATN SHARHLAR -->
 <section class="sec" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Yozma sharhlar</span>
-      <h2>Amaliyotdan keyin yozilgan so‘zlar</h2>
+    <div class="sec-head c">
+      <span class="tag">Yozma sharhlar</span>
+      <h2 class="h2">Amaliyotdan keyin</h2>
     </div>
     <div class="r-grid">
-      <div class="r-card"><div class="r-stars" aria-label="5 yulduz">★★★★★</div><p>Qizim 2 yil xurrak otib uxladi. Amaliyotdan keyingi birinchi kechadayoq ovozsiz uxlaganini ko‘rib yig‘lab yubordim. Doktorga katta rahmat.</p><div class="r-who"><span class="r-av">M</span><div><strong>Ota-ona ismi</strong><span>Qizi 5 yosh</span></div><span class="sample">Namuna</span></div></div>
-      <div class="r-card"><div class="r-stars" aria-label="5 yulduz">★★★★★</div><p>Eng ko‘p narkozdan qo‘rqqan edim. Hammasini oldindan tushuntirib berishdi, o‘g‘lim bir soatda uyg‘onib, suv so‘radi.</p><div class="r-who"><span class="r-av">D</span><div><strong>Ota-ona ismi</strong><span>O‘g‘li 4 yosh</span></div><span class="sample">Namuna</span></div></div>
-      <div class="r-card"><div class="r-stars" aria-label="5 yulduz">★★★★★</div><p>Uch yil otitlar bilan kurashdik. Amaliyotdan keyin olti oy o‘tdi — birorta ham quloq og‘rig‘i bo‘lmadi.</p><div class="r-who"><span class="r-av">N</span><div><strong>Ota-ona ismi</strong><span>O‘g‘li 6 yosh</span></div><span class="sample">Namuna</span></div></div>
-      <div class="r-card"><div class="r-stars" aria-label="5 yulduz">★★★★★</div><p>Endoskop ekranida adenoid qanday yo‘lni to‘sib turganini o‘zimga ko‘rsatishdi. Shundan keyin ikkilanish qolmadi.</p><div class="r-who"><span class="r-av">A</span><div><strong>Ota-ona ismi</strong><span>Qizi 7 yosh</span></div><span class="sample">Namuna</span></div></div>
-      <div class="r-card"><div class="r-stars" aria-label="5 yulduz">★★★★★</div><p>Narxga tahlillardan tortib nazorat ko‘riklarigacha hammasi kirgan ekan — qo‘shimcha to‘lov bo‘lmadi.</p><div class="r-who"><span class="r-av">S</span><div><strong>Ota-ona ismi</strong><span>O‘g‘li 5 yosh</span></div><span class="sample">Namuna</span></div></div>
-      <div class="r-card"><div class="r-stars" aria-label="5 yulduz">★★★★★</div><p>Bog‘chaga 10 kundan keyin qaytdi. Endi og‘zini yopib yuradi, ovozi ham tiniqlashdi.</p><div class="r-who"><span class="r-av">G</span><div><strong>Ota-ona ismi</strong><span>Qizi 4 yosh</span></div><span class="sample">Namuna</span></div></div>
+      <div class="card r-card"><div class="stars" aria-label="5 yulduz"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><p>Qizim 2 yil xurrak otib uxladi. Amaliyotdan keyingi birinchi kechadayoq ovozsiz uxlaganini ko‘rib yig‘lab yubordim.</p><div class="r-who"><span class="r-av">M</span><div><strong>Ota-ona ismi</strong><span>Qizi 5 yosh</span></div><span class="sample">Namuna</span></div></div>
+      <div class="card r-card"><div class="stars" aria-label="5 yulduz"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><p>Eng ko‘p narkozdan qo‘rqqan edim. Hammasini oldindan tushuntirishdi, o‘g‘lim bir soatda uyg‘onib, suv so‘radi.</p><div class="r-who"><span class="r-av">D</span><div><strong>Ota-ona ismi</strong><span>O‘g‘li 4 yosh</span></div><span class="sample">Namuna</span></div></div>
+      <div class="card r-card"><div class="stars" aria-label="5 yulduz"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><p>Uch yil otitlar bilan kurashdik. Amaliyotdan keyin olti oy o‘tdi — birorta ham quloq og‘rig‘i bo‘lmadi.</p><div class="r-who"><span class="r-av">N</span><div><strong>Ota-ona ismi</strong><span>O‘g‘li 6 yosh</span></div><span class="sample">Namuna</span></div></div>
+      <div class="card r-card"><div class="stars" aria-label="5 yulduz"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><p>Endoskop ekranida adenoid yo‘lni qanday to‘sib turganini o‘zimga ko‘rsatishdi. Shundan keyin ikkilanish qolmadi.</p><div class="r-who"><span class="r-av">A</span><div><strong>Ota-ona ismi</strong><span>Qizi 7 yosh</span></div><span class="sample">Namuna</span></div></div>
+      <div class="card r-card"><div class="stars" aria-label="5 yulduz"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><p>Narxga tahlillardan tortib nazorat ko‘riklarigacha hammasi kirgan ekan — qo‘shimcha to‘lov bo‘lmadi.</p><div class="r-who"><span class="r-av">S</span><div><strong>Ota-ona ismi</strong><span>O‘g‘li 5 yosh</span></div><span class="sample">Namuna</span></div></div>
+      <div class="card r-card"><div class="stars" aria-label="5 yulduz"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><p>Bog‘chaga 10 kundan keyin qaytdi. Endi og‘zini yopib yuradi, ovozi ham tiniqlashdi.</p><div class="r-who"><span class="r-av">G</span><div><strong>Ota-ona ismi</strong><span>Qizi 4 yosh</span></div><span class="sample">Namuna</span></div></div>
     </div>
   </div>
 </section>
 
 <!-- 6. METODIKA -->
-<section class="sec" id="metodika">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Mening metodikam</span>
-      <h2>Ko‘r-ko‘rona emas — <em class="grad">ko‘rib turib</em> olib tashlash</h2>
-      <p>Adenoid burun-halqumning chuqur qismida joylashgan. Oddiy usulda shifokor uni ko‘rmasdan olib tashlaydi — qoldiq qolishi va qayta o‘sishi shundan. Men har bir bosqichni endoskop orqali ekranda nazorat qilaman.</p>
+<section class="sec" id="metodika" style="padding-top:0">
+  <div class="wrap proc">
+    <div class="proc-head">
+      <span class="tag">Mening metodikam</span>
+      <h2 class="h2">Ko‘rib turib<br>olib tashlash</h2>
+      <p class="sub">Oddiy usulda adenoid ko‘rmasdan olib tashlanadi — qoldiq va qayta o‘sish shundan. Men har bir bosqichni endoskop orqali ekranda nazorat qilaman.</p>
+      <div class="arrows">
+        <button type="button" class="prev" id="p-prev" aria-label="Oldingi bosqich"><svg><use href="#i-left"/></svg></button>
+        <button type="button" class="next" id="p-next" aria-label="Keyingi bosqich"><svg><use href="#i-right"/></svg></button>
+      </div>
     </div>
-    <ol class="steps">
-      <li class="step"><h3>Endoskopik tashxis</h3><p>Burun-halqumni kamera orqali ko‘ramiz. Adenoid darajasini sizga ekranda ko‘rsataman va amaliyot kerakmi-yo‘qmi, ochiq aytaman.</p><span class="when">1-kun · 30 daqiqa</span></li>
-      <li class="step"><h3>Xavfsiz tayyorgarlik</h3><p>Tahlillar, pediatr va anesteziolog ko‘rigi. Narkoz bola yoshi va vazniga qarab individual tanlanadi.</p><span class="when">Amaliyotdan 1–3 kun oldin</span></li>
-      <li class="step core"><h3>Endoskopik adenotomiya</h3><p>Adenoid to‘qimasi endoskop nazoratida, og‘iz orqali — kesiksiz, tikuvsiz olib tashlanadi. Qoldiq qolmaganini ekranda tekshiraman.</p><span class="when">~30 daqiqa · umumiy narkoz</span></li>
-      <li class="step"><h3>Tiklanish va nazorat</h3><p>Ertasi kuni uyga. Parhez va parvarish bo‘yicha aniq yo‘riqnoma, 7-kun va 1-oyda nazorat ko‘rigi.</p><span class="when">7–10 kun</span></li>
-    </ol>
+    <div class="p-track" id="p-track">
+      <article class="card p-card"><span class="icon-tile"><svg><use href="#i-search"/></svg></span><h3>Endoskopik tashxis</h3><hr><p>Burun-halqumni kamera orqali ko‘ramiz. Adenoid darajasini sizga ekranda ko‘rsataman va amaliyot kerakmi-yo‘qmi, ochiq aytaman.</p><div class="p-foot"><span class="p-dur">30 daqiqa</span><span class="p-idx">01<span>/04</span></span></div></article>
+      <article class="card p-card"><span class="icon-tile"><svg><use href="#i-clip"/></svg></span><h3>Xavfsiz tayyorgarlik</h3><hr><p>Tahlillar, pediatr va anesteziolog ko‘rigi. Narkoz bola yoshi va vazniga qarab individual tanlanadi.</p><div class="p-foot"><span class="p-dur">1–3 kun</span><span class="p-idx">02<span>/04</span></span></div></article>
+      <article class="card p-card"><span class="icon-tile"><svg><use href="#i-scope"/></svg></span><h3>Endoskopik adenotomiya</h3><hr><p>Adenoid endoskop nazoratida, og‘iz orqali — kesiksiz va tikuvsiz olib tashlanadi. Qoldiq qolmaganini ekranda tekshiraman.</p><div class="p-foot"><span class="p-dur">~30 daqiqa</span><span class="p-idx">03<span>/04</span></span></div></article>
+      <article class="card p-card"><span class="icon-tile"><svg><use href="#i-heart"/></svg></span><h3>Tiklanish va nazorat</h3><hr><p>Ertasi kuni uyga. Parhez va parvarish bo‘yicha yozma yo‘riqnoma, 7-kun va 1-oyda nazorat ko‘rigi.</p><div class="p-foot"><span class="p-dur">7–10 kun</span><span class="p-idx">04<span>/04</span></span></div></article>
+    </div>
   </div>
 </section>
 
-<!-- 7. NARX -->
-<section class="sec" id="narx">
+<!-- 7. NIMALAR KIRADI + NARX -->
+<section class="sec" id="narx" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Amaliyotga nimalar kiradi</span>
-      <h2>Bitta narx — hech qanday <em class="grad">yashirin to‘lovsiz</em></h2>
-      <p>Tashxisdan nazorat ko‘rigigacha bo‘lgan barcha bosqichlar paketga kiritilgan.</p>
+    <div class="sec-head c">
+      <span class="tag">Amaliyotga nimalar kiradi</span>
+      <h2 class="h2">Bitta narx — hammasi ichida</h2>
     </div>
-    <div class="price-wrap">
-      <div class="incl">
-        <h3>Endoskopik adenotomiya — to‘liq paket</h3>
-        <div class="incl-grid">
-          <div class="incl-group">
-            <h4>Uskunalar</h4>
-            <ul>
-              <li><svg><use href="#i-check"/></svg>HD endoskopik tizim va monitor</li>
-              <li><svg><use href="#i-check"/></svg>Shaver / koblatsiya apparati — aniq va kam qon yo‘qotish bilan</li>
-              <li><svg><use href="#i-check"/></svg>Zamonaviy narkoz-nafas apparati</li>
-            </ul>
-          </div>
-          <div class="incl-group">
-            <h4>Tashxis va tayyorgarlik</h4>
-            <ul>
-              <li><svg><use href="#i-check"/></svg>Endoskopik ko‘rik va LOR konsultatsiyasi</li>
-              <li><svg><use href="#i-check"/></svg>Amaliyot oldi tahlillari</li>
-              <li><svg><use href="#i-check"/></svg>Anesteziolog ko‘rigi</li>
-            </ul>
-          </div>
-          <div class="incl-group">
-            <h4>Amaliyot kuni</h4>
-            <ul>
-              <li><svg><use href="#i-check"/></svg>Yengil, zamonaviy umumiy narkoz</li>
-              <li><svg><use href="#i-check"/></svg>Endoskop nazoratidagi adenotomiya</li>
-              <li><svg><use href="#i-check"/></svg>Ota-ona bilan birga palata</li>
-            </ul>
-          </div>
-          <div class="incl-group">
-            <h4>Keyingi parvarish</h4>
-            <ul>
-              <li><svg><use href="#i-check"/></svg>Dori-darmon va parvarish yo‘riqnomasi</li>
-              <li><svg><use href="#i-check"/></svg>7-kun va 1-oy nazorat ko‘riklari</li>
-              <li><svg><use href="#i-check"/></svg>Shifokor bilan Telegram orqali aloqa</li>
-            </ul>
-          </div>
+    <div class="bento">
+      <div class="card b-card b-7">
+        <div class="bars" aria-hidden="true">
+          <div class="bar-row"><div class="bar" style="flex:0 1 46%"></div><span class="chip"><svg><use href="#i-scope"/></svg>HD endoskop</span></div>
+          <div class="bar-row"><div class="bar" style="flex:0 1 72%"></div><span class="chip"><svg><use href="#i-wave"/></svg>Koblatsiya</span></div>
+          <div class="bar-row"><div class="bar" style="flex:0 1 34%"></div><span class="chip"><svg><use href="#i-heart"/></svg>Monitoring</span></div>
+          <div class="bar-row"><div class="bar" style="flex:0 1 58%"></div><span class="chip"><svg><use href="#i-lung"/></svg>Narkoz apparati</span></div>
         </div>
+        <h3>Zamonaviy uskunalar</h3>
+        <p>HD endoskopik tizim, shaver/koblatsiya apparati va narkoz-nafas monitoringi — aniq ish va kam qon yo‘qotish uchun.</p>
       </div>
-      <div class="p-card">
-        <span class="eyebrow">Maxsus taklif</span>
-        <h3>To‘liq paket narxi</h3>
-        <span class="p-old">6 000 000 so‘m</span>
-        <div class="p-new"><strong>4 999 000</strong><span>so‘m</span></div>
-        <span class="p-save">−1 001 000 so‘m tejaysiz</span>
-        <a class="btn btn-primary" href="#yozilish">Joyni band qilish <span class="arr">→</span></a>
-        <small>Narx <span class="ph">[sana]</span>gacha yozilganlar uchun amal qiladi. Oyiga <span class="ph">[N]</span> ta amaliyot joyi.</small>
+      <div class="card b-card b-5">
+        <div class="checks" aria-hidden="true">
+          <div class="chk"><i><svg><use href="#i-check"/></svg></i><small>Ko‘rik</small></div>
+          <div class="chk"><i><svg><use href="#i-check"/></svg></i><small>Tahlillar</small></div>
+          <div class="chk"><i><svg><use href="#i-check"/></svg></i><small>Anesteziolog</small></div>
+        </div>
+        <h3>Tashxis va tayyorgarlik</h3>
+        <p>Endoskopik ko‘rik, amaliyot oldi tahlillari va anesteziolog konsultatsiyasi narxga kiritilgan.</p>
+      </div>
+      <div class="card b-card b-5">
+        <div class="shield" aria-hidden="true">
+          <svg class="sh" viewBox="0 0 200 216"><path d="M100 4c26 16 58 22 90 22v70c0 58-40 98-90 118C50 194 10 154 10 96V26c32 0 64-6 90-22z" fill="#F4F5F7" stroke="#E4E6EA" stroke-width="2"/></svg>
+          <span class="lock"><svg><use href="#i-lock"/></svg></span>
+        </div>
+        <h3>Palata va parvarish</h3>
+        <p>Ota-ona bilan birga palata, dori-darmon, yozma yo‘riqnoma va 7-kun hamda 1-oydagi nazorat ko‘riklari.</p>
+      </div>
+      <div class="card b-card b-7 price">
+        <div class="price-top">
+          <span class="tag">Maxsus taklif</span>
+          <span class="old">6 000 000 so‘m</span>
+        </div>
+        <div class="new"><strong>4 999 000</strong><span>so‘m</span></div>
+        <div class="price-bottom">
+          <span class="save">−1 001 000 so‘m tejaysiz</span>
+          <a class="btn btn-dark" href="#yozilish">Joyni band qilish</a>
+          <small>To‘liq paket: tashxisdan nazorat ko‘rigigacha. Narx <span class="ph">[sana]</span>gacha amal qiladi, oyiga <span class="ph">[N]</span> ta joy.</small>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- 8. IKKI YO‘L -->
-<section class="sec">
+<section class="sec" style="padding-top:0">
   <div class="wrap">
-    <div class="sec-head">
-      <span class="eyebrow">Ikki yo‘l, bitta tanlov</span>
-      <h2>Bugun qaror qabul qilasiz — natijasini farzandingiz yashaydi</h2>
+    <div class="sec-head c">
+      <span class="tag">Ikki yo‘l, bitta tanlov</span>
+      <h2 class="h2">Qaror bugun —<br><span class="fade">natija bir umr</span></h2>
     </div>
     <div class="paths">
-      <div class="path path-a">
-        <span class="path-label">1-yo‘l · Kutish</span>
+      <div class="card path path-a">
+        <div class="path-top"><span class="path-no">1-yo‘l · Kutish</span></div>
         <h3>“O‘zi o‘tib ketar”</h3>
         <ul>
-          <li><svg><use href="#i-x"/></svg>Har kecha xurrak va uzuq-yuluq uyqu davom etadi</li>
-          <li><svg><use href="#i-x"/></svg>Otitlar qaytalanadi, eshitish pasayishi xavfi ortadi</li>
-          <li><svg><use href="#i-x"/></svg>Doimiy og‘iz bilan nafas — tishlov va yuz shakli o‘zgarishi mumkin</li>
-          <li><svg><use href="#i-x"/></svg>Dori va tomchilarga ketgan pul va vaqt — natijasiz</li>
+          <li><i><svg><use href="#i-x"/></svg></i>Har kecha xurrak va uzuq-yuluq uyqu davom etadi</li>
+          <li><i><svg><use href="#i-x"/></svg></i>Otitlar qaytalanadi, eshitish pasayishi xavfi ortadi</li>
+          <li><i><svg><use href="#i-x"/></svg></i>Doimiy og‘iz bilan nafas — tishlov va yuz shakli o‘zgarishi mumkin</li>
+          <li><i><svg><use href="#i-x"/></svg></i>Dori va tomchilarga ketgan pul va vaqt — natijasiz</li>
         </ul>
         <p class="res">Muammo yoshi bilan kattalashadi, lekin o‘z-o‘zidan yo‘qolmaydi.</p>
       </div>
-      <div class="path path-b">
-        <span class="path-label">2-yo‘l · Hal qilish</span>
+      <div class="path path-b" style="border-radius:32px">
+        <div class="path-top"><span class="path-no">2-yo‘l · Hal qilish</span></div>
         <h3>30 daqiqalik endoskopik amaliyot</h3>
         <ul>
-          <li><svg><use href="#i-check"/></svg>Birinchi kechalardanoq burun bilan erkin nafas</li>
-          <li><svg><use href="#i-check"/></svg>Shamollash va otitlar sezilarli kamayadi</li>
-          <li><svg><use href="#i-check"/></svg>Sifatli uyqu — kunduzi faol, diqqatli bola</li>
-          <li><svg><use href="#i-check"/></svg>Bir marta to‘lov, 7–10 kunda odatiy hayot</li>
+          <li><i><svg><use href="#i-check"/></svg></i>Birinchi kechalardanoq burun bilan erkin nafas</li>
+          <li><i><svg><use href="#i-check"/></svg></i>Shamollash va otitlar sezilarli kamayadi</li>
+          <li><i><svg><use href="#i-check"/></svg></i>Sifatli uyqu — kunduzi faol, diqqatli bola</li>
+          <li><i><svg><use href="#i-check"/></svg></i>Bir marta to‘lov, 7–10 kunda odatiy hayot</li>
         </ul>
         <p class="res">Muammoni bir marta, ildizidan hal qilasiz.</p>
       </div>
@@ -478,12 +669,11 @@ footer{padding-block:36px 48px;color:var(--dim);font-size:13px}
 </section>
 
 <!-- 9. FAQ -->
-<section class="sec" id="savollar">
-  <div class="wrap faq">
-    <div class="sec-head">
-      <span class="eyebrow">Savollar</span>
-      <h2>Ota-onalar eng ko‘p so‘raydigan savollar</h2>
-      <p>Javob topmadingizmi? Telegramda yozing — shaxsan javob beraman.</p>
+<section class="sec" id="savollar" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head c">
+      <span class="tag">Savollar</span>
+      <h2 class="h2">Ko‘p so‘raladigan savollar</h2>
     </div>
     <div class="faq-list">
       <details><summary>Narkoz bola uchun xavfli emasmi?<span class="pm" aria-hidden="true"></span></summary><p>Zamonaviy narkoz qisqa va yengil — bola amaliyotdan so‘ng odatda bir soat ichida uyg‘onadi. Narkoz tajribali anesteziolog tomonidan, bolaning yoshi, vazni va tahlillariga qarab tanlanadi va butun amaliyot davomida monitor orqali kuzatiladi.</p></details>
@@ -500,12 +690,13 @@ footer{padding-block:36px 48px;color:var(--dim);font-size:13px}
 <section class="sec" id="yozilish" style="padding-top:0">
   <div class="wrap">
     <div class="cta">
-      <span class="eyebrow">Birinchi qadam</span>
-      <h2>Farzandingizning <em class="grad">tinch uyqusi</em> bitta ko‘rikdan boshlanadi</h2>
-      <p>Endoskopik ko‘rikka yoziling — adenoid darajasini ekranda ko‘rsataman va amaliyot kerakmi, ochiq aytaman. Paket narxi: <span class="p-inline"><s>6 000 000</s> 4 999 000 so‘m</span>.</p>
+      <div class="giant" aria-hidden="true">Nafas</div>
+      <span class="badge"><svg><use href="#i-spark"/></svg>Birinchi qadam</span>
+      <h2>Tinch uyqu bitta ko‘rikdan boshlanadi</h2>
+      <p>Endoskopik ko‘rikka yoziling — adenoid darajasini ekranda ko‘rsataman va amaliyot kerakmi, ochiq aytaman. To‘liq paket: <s>6 000 000</s> <b>4 999 000 so‘m</b>.</p>
       <div class="cta-row">
-        <a class="btn btn-primary" href="https://t.me/" target="_blank" rel="noopener">Telegram orqali yozilish <span class="arr">→</span></a>
-        <a class="btn btn-ghost" href="#savollar">Savollarni ko‘rish</a>
+        <a class="btn btn-dark" href="https://t.me/" target="_blank" rel="noopener">Telegram orqali yozilish</a>
+        <a class="btn btn-light" href="#savollar">Savollarni ko‘rish</a>
       </div>
       <div class="contact">
         <span>Telefon: <b><span class="ph">+998 [XX XXX XX XX]</span></b></span>
@@ -513,16 +704,38 @@ footer{padding-block:36px 48px;color:var(--dim);font-size:13px}
       </div>
     </div>
   </div>
-</section>
-
-</main>
-
-<footer>
   <div class="wrap foot">
     <span>© Dr. <span class="ph">[Ism Familiya]</span> — LOR-jarroh</span>
     <span>Litsenziya: <span class="ph">[raqam]</span>. Qarshi ko‘rsatmalar bor, shifokor bilan maslahatlashing.</span>
   </div>
-</footer>
+</section>
 
+</main>
+</div>
+
+<script>
+(function(){
+  var stats=[
+    {l:"Amaliyot davomiyligi",n:"30",s:"daq",c:"Umumiy narkoz ostida, endoskop nazoratida"},
+    {l:"Odatiy hayotga qaytish",n:"7",s:"kun",c:"Bog‘cha va maktabga 7–10 kunda"},
+    {l:"Kesik va tikuv",n:"0",s:"ta",c:"Amaliyot og‘iz orqali, endoskop bilan"},
+    {l:"Amaliyot yoshi",n:"3",s:"+yosh",c:"Bolalar va kattalar uchun"}
+  ];
+  var i=0,bars=document.querySelectorAll(".stat-bar b");
+  var L=document.getElementById("stat-label"),N=document.getElementById("stat-num"),C=document.getElementById("stat-cap");
+  function show(k){
+    i=(k+stats.length)%stats.length;var s=stats[i];
+    L.textContent=s.l;N.textContent=s.n;var sm=document.createElement("small");sm.textContent=s.s;N.appendChild(sm);C.textContent=s.c;
+    bars.forEach(function(b,j){b.classList.toggle("on",j===i)});
+  }
+  document.getElementById("stat-prev").addEventListener("click",function(){show(i-1)});
+  document.getElementById("stat-next").addEventListener("click",function(){show(i+1)});
+
+  var t=document.getElementById("p-track");
+  function step(d){var c=t.querySelector(".p-card");t.scrollBy({left:d*(c.offsetWidth+28),behavior:"smooth"})}
+  document.getElementById("p-prev").addEventListener("click",function(){step(-1)});
+  document.getElementById("p-next").addEventListener("click",function(){step(1)});
+})();
+</script>
 </body>
 </html>
